@@ -13,11 +13,32 @@ body {
     rgba(151, 206, 76, 1) 100%
   );
 }
+header {
+  background-color: rgba(255, 228, 196, 0.144);
+  padding: 15px;
+  width: 100%;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  border-radius: 0 0 20px 30px;
+}
 nav {
   margin: auto;
   width: 70%;
   display: flex;
   justify-content: space-between;
+}
+button {
+  background-color: inherit;
+  border: none;
+  transition: 0.5s;
+  font-size: 20px;
+  opacity: 0.6;
+}
+button:hover,
+button:active,
+button:focus {
+  transform: scale(1.2);
+  opacity: 1;
 }
 #contnent {
   display: flex;
@@ -25,27 +46,113 @@ nav {
   justify-content: space-evenly;
 }
 #contnent div {
-  display: flex;
+  position: relative;
   width: 30%;
-  height: 100%;
   background: rgba(39, 38, 38, 0.144);
-  box-shadow: 1px 1px 6px 1px rgba(218, 213, 213, 0.082);
+  box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.11);
   margin: 25px;
   border-radius: 10px;
   overflow: hidden;
+  transition: 0.5s;
+}
+#contnent div:hover {
+  transform: rotateY(180deg);
+  background: rgba(255, 255, 255, 0.144);
 }
 #contnent div section {
+  position: relative;
   height: 100%;
   display: flex;
   flex-flow: column;
   justify-content: center;
   padding: 10px;
 }
+
 #contnent div section:last-child {
-  height: 100%;
-  color: white;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: column;
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  color: black;
   font-weight: bolder;
+  text-align: center;
+  z-index: 10;
+  height: 80%;
+  width: 100%;
+}
+h2 {
+  font-size: 4em;
+  text-shadow: 1px 1px rgb(235, 232, 232);
+}
+p {
+  font-size: 2.5em;
+  text-shadow: 1px 1px rgb(235, 232, 232);
+}
+#contnent div:hover section:last-child {
+  display: flex;
+}
+#contnent div:hover section img {
+  filter: blur(5px);
 }
 #contnent div section img {
   transform: scale(1.1);
+}
+input {
+  padding: 10px;
+  background-color: inherit;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 10%;
+  text-align: center;
+  opacity: 0.6;
+  transition: 0.5s;
+}
+input:focus,
+input:hover,
+input:active {
+  outline: none;
+  opacity: 1;
+  width: 15%;
+}
+
+@media only screen and (max-width: 600px) {
+  header nav {
+    display: none;
+    flex-flow: column;
+    text-align: center;
+  }
+  #find-data {
+    width: 100%;
+    margin: 5px;
+  }
+  button {
+    margin: 5px;
+  }
+  .open {
+    display: flex;
+  }
+  .burger {
+    display: block;
+  }
+  .burger span {
+    border: 2px solid black;
+    margin: 1px;
+    pad: 1px 0px;
+  }
+  #contnent {
+    flex-flow: column;
+  }
+  #contnent div {
+    width: 80%;
+  }
+  h2 {
+    font-size: 3em;
+  }
+  p {
+    font-size: 2em;
+  }
 }
