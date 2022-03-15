@@ -147,19 +147,24 @@ async function FaindChara(url) {
     });
 }
 async function randomCha() {
-    const number = Math.floor(Math.random() * (826 - 1 + 1)) + 1;
+
+    const howMath = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
     state = 'character';
     delteNode();
-    const charactersTable = await find('https://rickandmortyapi.com/api/character/' + number);
-    console.log(charactersTable)
-    const data = {
-        name: charactersTable.name,
-        gender: charactersTable.gender,
-        species: charactersTable.species,
-        status: charactersTable.status,
-        image: charactersTable.image,
-    };
-    addToDomCH(data);
+    for (let i = 0; i <= howMath; i++) {
+        const number = Math.floor(Math.random() * (826 - 1 + 1)) + 1;
+        console.log(howMath);
+        const charactersTable = await find('https://rickandmortyapi.com/api/character/' + number);
+        console.log(charactersTable)
+        const data = {
+            name: charactersTable.name,
+            gender: charactersTable.gender,
+            species: charactersTable.species,
+            status: charactersTable.status,
+            image: charactersTable.image,
+        };
+        addToDomCH(data);
+    }
 }
 
 function NextPageCh() {

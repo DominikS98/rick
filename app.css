@@ -47,7 +47,7 @@ button:focus {
 }
 #contnent div {
   position: relative;
-  width: 30%;
+  width: 20%;
   background: rgba(39, 38, 38, 0.144);
   box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.11);
   margin: 25px;
@@ -120,7 +120,8 @@ input:active {
 }
 #contnent > section {
   position: relative;
-  width: 40%;
+  min-width: 20%;
+  width: auto;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -128,7 +129,15 @@ input:active {
   background-color: rgba(10, 8, 8, 0.123);
   margin: 10px;
 }
-
+#contnent > section:hover {
+  box-shadow: 1px 1px 10px 5px rgba(10, 8, 8, 0.253);
+}
+#contnent > section p {
+  font-size: 2em;
+}
+#contnent > section h2 {
+  font-size: 3em;
+}
 @media only screen and (max-width: 600px) {
   header nav {
     display: none;
