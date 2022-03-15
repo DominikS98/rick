@@ -118,6 +118,16 @@ input:active {
   opacity: 1;
   width: 15%;
 }
+#contnent > section {
+  position: relative;
+  width: 40%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding: 10px;
+  background-color: rgba(10, 8, 8, 0.123);
+  margin: 10px;
+}
 
 @media only screen and (max-width: 600px) {
   header nav {
@@ -145,6 +155,7 @@ input:active {
   }
   #contnent {
     flex-flow: column;
+    align-items: center;
   }
   #contnent div {
     width: 80%;
@@ -154,5 +165,11 @@ input:active {
   }
   p {
     font-size: 2em;
+  }
+  #contnent > section {
+    flex-flow: column;
+    width: 80%;
+    align-content: center;
+    justify-content: center;
   }
 }

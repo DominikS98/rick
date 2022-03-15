@@ -6,6 +6,7 @@ const next = document.querySelector('#next');
 const previous = document.querySelector('#previous');
 const input = document.querySelector('#find-data');
 const burger = document.querySelector('.burger');
+const random = document.querySelector('#random');
 
 
 burger.addEventListener('click', () => {
@@ -29,13 +30,12 @@ function find(url) {
 }
 
 function delteNode() {
-    const content = document.querySelectorAll('#contnent div');
+    const content = document.querySelectorAll('#contnent div, #contnent section');
     for (const div of content) {
         div.remove();
     }
 }
 function addToDomCH(data) {
-
     const box = document.getElementById('temp-box');
     const card = document.importNode(box.content, true);
     card.getElementById('img').src = data.image;
@@ -47,22 +47,21 @@ function addToDomCH(data) {
 }
 
 function addToDomLO(data) {
-    const box = document.getElementById('temp-box');
+    const box = document.getElementById('temp-box-no-image');
     const card = document.importNode(box.content, true);
     card.getElementById('name').innerHTML = 'name: ' + data.name;
-    card.getElementById('gender').innerHTML = 'type: ' + data.type;
-    card.getElementById('species').innerHTML = 'dimension: ' + data.dimension;
-    card.getElementById('status').innerHTML = 'created: ' + data.created;
+    card.getElementById('type').innerHTML = 'type: ' + data.type;
+    card.getElementById('dimension').innerHTML = 'dimension: ' + data.dimension;
+    card.getElementById('created').innerHTML = 'created: ' + data.created;
     contnentBox.append(card);
 }
 
 function addToDomEP(data) {
-    const box = document.getElementById('temp-box');
+    const box = document.getElementById('temp-box-no-image');
     const card = document.importNode(box.content, true);
     card.getElementById('name').innerHTML = 'name: ' + data.name;
-    card.getElementById('gender').innerHTML = 'air_date: ' + data.air_date;
-    card.getElementById('species').innerHTML = 'episode: ' + data.episode;
-    card.getElementById('status').innerHTML = 'characters: ' + data.characters;
+    card.getElementById('type').innerHTML = 'air_date: ' + data.air_date;
+    card.getElementById('dimension').innerHTML = 'episode: ' + data.episode;
     contnentBox.append(card);
 }
 
@@ -147,6 +146,21 @@ async function FaindChara(url) {
 
     });
 }
+async function randomCha() {
+    const number = Math.floor(Math.random() * (826 - 1 + 1)) + 1;
+    state = 'character';
+    delteNode();
+    const charactersTable = await find('https://rickandmortyapi.com/api/character/' + number);
+    console.log(charactersTable)
+    const data = {
+        name: charactersTable.name,
+        gender: charactersTable.gender,
+        species: charactersTable.species,
+        status: charactersTable.status,
+        image: charactersTable.image,
+    };
+    addToDomCH(data);
+}
 
 function NextPageCh() {
 
@@ -180,3 +194,5 @@ input.addEventListener('keyup', (event) => {
         FaindChara(input.value);
     }
 });
+random.addEventListener('click', randomCha);
+randomCha();
