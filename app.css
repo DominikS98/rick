@@ -6,11 +6,20 @@
 body {
   min-height: 100vh;
   min-width: 100%;
-  background: rgb(68, 40, 29);
-  background: linear-gradient(
-    0deg,
-    rgba(68, 40, 29, 1) 0%,
-    rgba(151, 206, 76, 1) 100%
+  background-image: linear-gradient(
+    to right bottom,
+    #4e3c45,
+    #513e4c,
+    #514055,
+    #4f445f,
+    #494868,
+    #49577c,
+    #43678f,
+    #3877a0,
+    #2f97bd,
+    #29b8d5,
+    #3adae6,
+    #5ffbf1
   );
 }
 header {
@@ -33,6 +42,7 @@ button {
   transition: 0.5s;
   font-size: 20px;
   opacity: 0.6;
+  color: white;
 }
 button:hover,
 button:active,
@@ -47,7 +57,7 @@ button:focus {
 }
 #contnent div {
   position: relative;
-  width: 30%;
+  width: 20%;
   background: rgba(39, 38, 38, 0.144);
   box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.11);
   margin: 25px;
@@ -85,11 +95,11 @@ button:focus {
   width: 100%;
 }
 h2 {
-  font-size: 4em;
+  font-size: 2.2em;
   text-shadow: 1px 1px rgb(235, 232, 232);
 }
 p {
-  font-size: 2.5em;
+  font-size: 1.8em;
   text-shadow: 1px 1px rgb(235, 232, 232);
 }
 #contnent div:hover section:last-child {
@@ -120,7 +130,8 @@ input:active {
 }
 #contnent > section {
   position: relative;
-  width: 40%;
+  min-width: 20%;
+  width: auto;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -128,8 +139,38 @@ input:active {
   background-color: rgba(10, 8, 8, 0.123);
   margin: 10px;
 }
-
-@media only screen and (max-width: 600px) {
+#contnent > section:hover {
+  box-shadow: 1px 1px 10px 5px rgba(10, 8, 8, 0.253);
+}
+#contnent > section p {
+  font-size: 2em;
+}
+#contnent > section h2 {
+  font-size: 3em;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th {
+  padding: 20px;
+  font-size: 2em;
+  text-align: left;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: rgba(255, 255, 255, 0.164);
+  color: white;
+}
+table tr {
+  padding: 30px;
+  border: 2px solid rgba(8, 8, 8, 0.664);
+  text-align: left;
+}
+td {
+  padding: 20px;
+  font-size: 1.5em;
+  color: white;
+}
+@media only screen and (max-width: 760px) {
   header nav {
     display: none;
     flex-flow: column;
@@ -171,5 +212,27 @@ input:active {
     width: 80%;
     align-content: center;
     justify-content: center;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  table tr {
+    border: 2px solid rgba(8, 8, 8, 0.664);
+    text-align: left;
+    display: flex;
+    flex-flow: column;
+    padding: 10px;
+  }
+  td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    font-size: 1.5em;
+    color: white;
+  }
+  td p {
+    font-size: 1em;
+    text-shadow: none;
   }
 }
