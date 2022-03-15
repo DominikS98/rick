@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ric & morty</title>
+    <link rel="stylesheet" href="app.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <button id="random">random</button>
+        <button id="characters">characters</button>
+        <button id="locations">locations</button>
+        <input type="text" placeholder="szukaj" />
+        <button id="episodes">episodes</button>
+        <button id="next">next</button>
+        <button id="previous">previous</button>
+      </nav>
+    </header>
+    <template id="temp-box">
+      <div>
+        <section>
+          <img id="img" />
+        </section>
+        <section>
+          <h2 id="name"></h2>
+          <p id="gender"></p>
+          <p id="species"></p>
+          <p id="status"></p>
+        </section>
+      </div>
+    </template>
+    <div id="box">
+      <section id="contnent"></section>
+    </div>
+  </body>
+</html>
