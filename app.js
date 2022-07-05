@@ -8,7 +8,7 @@ const input = document.querySelector('#find-data');
 const burger = document.querySelector('.burger');
 const random = document.querySelector('#random');
 
-
+//asdasdasdsa
 burger.addEventListener('click', () => {
     const nav = document.querySelector('header nav');
     nav.classList.toggle("open");
