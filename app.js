@@ -12,6 +12,7 @@ const random = document.querySelector('#random');
 burger.addEventListener('click', () => {
     const nav = document.querySelector('header nav');
     nav.classList.toggle("open");
+    //asdasdasd
 })
 
 let page = 1;
